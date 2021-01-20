@@ -1,6 +1,6 @@
 **Team Win Recovery Project (TWRP)**
 
-This is a set of device configs that you can use to build and test TWRP in the Android emulator. Note that adb will take about 10 to 15 seconds after TWRP is booted to become available. Just wait and it will come online eventually.
+This is a set of device configs that you can use to build and test TWRP in the Android emulator with Android SDK Tools 24.4.1 or lower. Note that adb will take about 10 to 15 seconds after TWRP is booted to become available. Just wait and it will come online eventually.
 
 This branch of the device configs is intended to be used with Android 4.4.2 armeabi-v7a system image. For some reason there is no cache partition. In order to create a cache partition as well fake boot and recovery partitions, you will have to boot the emulator with a custom kernel. We added simply added support for reading a partition map to the kernel configuration. The source for this kernel is located here:
 
