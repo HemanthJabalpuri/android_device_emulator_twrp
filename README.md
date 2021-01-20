@@ -1,12 +1,12 @@
 **Team Win Recovery Project (TWRP)**
 
-This is a set of device configs that you can use to build and test TWRP in the Android emulator. Note that adb will take about 10 to 15 seconds after TWRP is booted to become available. Just wait and it will come online eventually.
+This is a set of device configs that you can use to build and test TWRP in the Android emulator with Android SDK Tools 24.4.1. Note that adb will take about 10 to 15 seconds after TWRP is booted to become available. Just wait and it will come online eventually.
 
-This branch of the device configs is intended to be used with Android 5.1.1 system image. In order to create fake boot and recovery partitions, you will have to boot the emulator with a custom kernel. We simply added support for reading a partition table to the kernel configuration. The source for this kernel is located here:
+This branch of the device configs is intended to be used with Android 6.0 armeabi-v7a system image. In order to create fake boot and recovery partitions, you will have to boot the emulator with a custom kernel. We simply added support for reading a partition table to the kernel configuration. The source for this kernel is located here:
 
 [Kernel Source](https://android.googlesource.com/kernel/goldfish/+/android-goldfish-3.4 "Kernel Source")
 
-To boot this in the emulator, build your recoveryimage. With the Android emulator make a new device based on a Galaxy Nexus. Name it TWRP. Allow it to have a hardware keyboard and a sdcard sized to 2000MB. Give it a decent sized data partition like 2000MB or more. TWRP will be using the data partition as an emulated storage setup as seen on most modern Android devices, so having some extra room may help. Then from your android-sdk/tools folder run the following command:
+To boot this in the emulator, build your recoveryimage or grab one from https://dl.twrp.me/twrp/ like TWRP 3.0.2-0 and unpack it and gzip the ramdisk.cpio to boot or *download unpacked and gzipped one from this repo*. With the Android emulator make a new device based on a Galaxy Nexus. Name it TWRP. Allow it to have a hardware keyboard and a sdcard sized to 2000MB. Give it a decent sized data partition like 2000MB or more. TWRP will be using the data partition as an emulated storage setup as seen on most modern Android devices, so having some extra room may help. Then from your android-sdk/tools folder run the following command:
 
 ```
 ./emulator -avd TWRP -ramdisk ~/omni_folder/out/target/product/twrp/ramdisk-recovery.img -kernel ~/omni_folder/device/emulator/twrp/goldfish_3.4_kernel
@@ -19,6 +19,6 @@ This script will partition the sdcard with a boot, recovery, cache, and removabl
 
 You can find a compiling guide for TWRP [here](http://forum.xda-developers.com/showthread.php?t=1943625 "Guide").
 
-[More information about the project.](http://www.teamw.in/project/twrp2 "More Information")
+[More information about the project.](https://twrp.me "More Information")
 
 If you have code changes to submit those should be pushed to OmniROM's gerrit instance.  A guide can be found [here](http://docs.omnirom.org/Contributing_code "Gerrit Guide").
