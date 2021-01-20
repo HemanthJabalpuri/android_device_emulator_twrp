@@ -1,12 +1,12 @@
 **Team Win Recovery Project (TWRP)**
 
-This is a set of device configs that you can use to build and test TWRP in the Android emulator. Note that adb will take about 10 to 15 seconds after TWRP is booted to become available. Just wait and it will come online eventually.
+This is a set of device configs that you can use to build and test TWRP in the Android emulator with armeabi-v7a. Note that adb will take about 10 to 15 seconds after TWRP is booted to become available. Just wait and it will come online eventually.
 
 This branch of the device configs is intended to give you a more modern emmc type of device instead of relying on the mtd nand setup that the default emulator configuration uses. In order to make this setup work, you will have to boot the emulator with a custom kernel. We added ext2/3/4 support as well as support for reading a partition map to the kernel configuration. The source for this kernel is located here:
 
 [Kernel Source](https://github.com/Dees-Troy/android_kernel_goldfish "Kernel Source")
 
-To boot this in the emulator, build your recoveryimage. With the Android emulator make a new device based on a Galaxy Nexus. Allow it to have a hardware keyboard and a sdcard. Give it a name like TWRP. Then from your android-sdk/tools folder run the following command:
+To boot this in the emulator, build your recoveryimage or grab one example TWRP 2.6.3.0 from https://dl.twrp.me/twrp/. With the Android emulator make a new device based on a Galaxy Nexus. Allow it to have a hardware keyboard and a sdcard. Give it a name like TWRP. Then from your android-sdk/tools folder run the following command:
 
 ```
 ./emulator -avd TWRP -ramdisk ~/cm_folder/out/target/product/twrp/ramdisk-recovery.img -kernel ~/cm_folder/device/emulator/twrp/goldfish_2.6_kernel
@@ -49,6 +49,6 @@ Boot the emulator using -ramdisk path/to/newramdisk.img -kernel path/to/goldfish
 
 You can find a compiling guide for TWRP [here](http://forum.xda-developers.com/showthread.php?t=1943625 "Guide").
 
-[More information about the project.](http://www.teamw.in/project/twrp2 "More Information")
+[More information about the project.](https://twrp.me "More Information")
 
 If you have code changes to submit those should be pushed to our gerrit instance.  A guide can be found [here](http://teamw.in/twrp2-gerrit "Gerrit Guide").
